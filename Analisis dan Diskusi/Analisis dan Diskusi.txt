@@ -1,0 +1,46 @@
+Nama		: Ikhsan Fadila
+NIM		: 224308035
+Kelas		: TKA-6B
+
+Analisis dan Diskusi
+•	Analisis
+1.	Apa yang terjadi saat objek berwarna merah muncul di kamera?
+Jawab : Pada saat objek berwarna merah muncul di kamera, maka sistem akan menangkap gambar dengan kamera secara real time menggunakan OpenCV. Lalu, akan mengubah gambar dari format BGR ke HSV untuk mendeteksi warna merah. Pada saat terdeteksi warna merah maka akan menampilkan hasil deteksi melalui tiga tab yaitu  frame untuk menampilkan tampilan asli dari kamera, mask untuk area putih menunjukkan bagian merah yang terdeteksi, dan result untuk menampilkan hanya bagian objek merah dari frame asli yang terdeteksi.
+
+2.	Bagaimana sistem mendeteksi dan memfilter warna merah?
+Jawab : Sistem akan mendeteksi warna merah dengan teknik pengolahan citra menggunakan OpenCV yaitu:
+-	Mengkonversi dari BGR ke HSV, 
+-	Kemudian mententukan rentang warna merah dengan kode python:
+dengan warna merah dalam HSV memiliki nilai Hue sekitar 0o- 10o dan 170o- 180o namun pada kode ini hanya rentang 0o- 10o yang digunakan.
+-	Selanjutnya membuat masking untuk warna merah dengan kode python dengan rentang merah bernilai 255 (putih) sedangkan lainnya 0 (hitam)
+-	Mengisolasi warna merah dalam frame dengan kode bitwise_and() menjaga hanya piksel yang ada dalam area putih pada mask dan hasilnya hanya bagian merah dalam gambar asli yang ditampilkan.
+
+3.	Bagaimana metode ini dapat diterapkan dalam intelligent control systems?
+Jawab : Metode ini dapat diterapkan dalam sistem kendali lalu lintas (mendeteksi lampu lalu lintas merah untuk sistem kendaraan otonom,dll), robotika, autonomus vehicles, sistem pengamanan dan pengawasan, aplikasi di industry dan manufaktur, aplikasi medis, dan lain lain.
+ 
+•	Diskusi
+1.	Bagaimana AI dapat meningkatkan sistem kontrol berbasis Computer Vision?
+Jawab : AI dapat meningkatkan sistem control cerdas berbasis Computer Vision dengan cara:
+-	Peningkatan akurasi dan adaptasi, dengan penggunaan Deep Learning menggunakan Convolutional Neural Networks (CNN).
+-	Pengenalan objek kompleks, maksudnya sistem AI dapat melacak objek dengan bentuk, kondisi pencahayaan yang berbeda.
+-	Pelacakan dan prediksi pergerakan, maksudnya sistem AI bisa melacak objek dinamis seperti model YOLO (You Only Look Once) dan SSD (Single Shot Detector)
+
+2.	Apa kelebihan dan kekurangan metode deteksi objek berbasis warna?
+Jawab : Kelebihan dan kekurangan metode deteksi objek berbasis warna yaitu:
+-	Kelebihan :
+a.	Cepat dan efisien
+b.	Ringan dan mudah diimplementasikan
+-	Kekurangan :
+a.	Terbatas variasi warna
+b.	Sulit mengatasi variasi pencahayaan
+c.	Sulit membedakan bentuk objek yang mirip
+
+3.	Bagaimana cara meningkatkan akurasi sistem deteksi objek?
+Jawab : 
+-	Menggunakan rentang warna yang lebih luas dalam HSV, kombinasikan dua rentang warna merah dalam HSV (0-10 dan 170-180).
+-	Menggunakan filter dan teknik pengolahan citra.
+-	Menggunakan metode deteksi (Canny Edge Detection atau Contour Detection) untuk membedakan objek.
+-	Menggunakan AI berupa Machine Learning seperti CNN.
+-	Menggabungkan dengan sensor tambahan seperti infrared untuk meningkatkan deteksi.
+
+
